@@ -1,0 +1,12 @@
+ac plez
+#include <stdio.h>
+
+int main(void) {
+    int z;
+	// your code goes here
+	scanf("%d",&z);
+	if(z>30)
+	printf("YES");
+	else
+	printf("NO");
+}

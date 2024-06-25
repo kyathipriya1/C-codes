@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <stdlib.h>
+long long calculateReachableCells(int N, int M, int X0, int Y0, int L) {
+    long long RC = 1;
+    if (L == 1) {
+        return (long long)N * M;
+    } else {
+        int up = (X0 - 1) / L;
+        int down = (N - X0) / L;
+        int left = (Y0 - 1) / L;
+        int right = (M - Y0) / L;
+        RC = 1LL + (up + down) + (left + right) + (up + down) * (long long)(left + right);
+    }
+    return RC;
+}
+int main() {
+    int T;
+    scanf("%d", &T);
+    while (T--) {
+        int N, M, X0, Y0, L;
+        scanf("%d %d %d %d %d", &N, &M, &X0, &Y0, &L); 
+        long long result = calculateReachableCells(N, M, X0, Y0, L);
+        printf("%lld\n", result);
+    }
+    return 0;
+}

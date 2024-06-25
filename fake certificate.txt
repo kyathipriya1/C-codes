@@ -1,0 +1,31 @@
+#include<stdio.h>
+#include<string.h>
+int main(){
+    int t;
+    scanf("%d",&t);
+    while(t--){
+        int n;
+        scanf("%d",&n);
+        char s[n];
+        scanf("%s",s);
+        int count = 0;
+        for(int i=0;i<n;i++){
+            if(s[i] == '1')
+            count++;
+        }
+        int max = 0;
+        int p = 0;
+        for(int i=0;i<n;i++){
+            if(s[i] == '0'){
+                p++;
+            }
+            else{
+                p = 0;
+            }
+            if(p > max){
+                max = p;
+            }
+        }
+        printf("%d\n",max+count);
+    }
+}
